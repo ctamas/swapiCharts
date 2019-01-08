@@ -1,3 +1,5 @@
+Highcharts implementation of Star Wars Public API using React
+
 Features: 
 - Highcharts JS library integration
 - Responsive resizing of 2 x 2 chart grid
