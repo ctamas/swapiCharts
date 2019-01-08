@@ -1,7 +1,7 @@
 {
   "main.css": "/swapiCharts/static/css/main.3918fdc5.chunk.css",
-  "main.js": "/swapiCharts/static/js/main.f474bb02.chunk.js",
-  "main.js.map": "/swapiCharts/static/js/main.f474bb02.chunk.js.map",
+  "main.js": "/swapiCharts/static/js/main.afb6c431.chunk.js",
+  "main.js.map": "/swapiCharts/static/js/main.afb6c431.chunk.js.map",
   "static/css/1.69eb9b9f.chunk.css": "/swapiCharts/static/css/1.69eb9b9f.chunk.css",
   "static/js/1.9511752e.chunk.js": "/swapiCharts/static/js/1.9511752e.chunk.js",
   "static/js/1.9511752e.chunk.js.map": "/swapiCharts/static/js/1.9511752e.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/1.69eb9b9f.chunk.css.map": "/swapiCharts/static/css/1.69eb9b9f.chunk.css.map",
   "static/css/main.3918fdc5.chunk.css.map": "/swapiCharts/static/css/main.3918fdc5.chunk.css.map",
   "index.html": "/swapiCharts/index.html",
-  "precache-manifest.85f773396994a715172136950cef02a2.js": "/swapiCharts/precache-manifest.85f773396994a715172136950cef02a2.js",
+  "precache-manifest.d07ea7926608e5265f2535bf0b9e2544.js": "/swapiCharts/precache-manifest.d07ea7926608e5265f2535bf0b9e2544.js",
   "service-worker.js": "/swapiCharts/service-worker.js"
 }
