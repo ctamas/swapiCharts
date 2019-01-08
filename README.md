@@ -5,6 +5,7 @@ Features:
 - Calls from live API at https://swapi.co/
 
 Find live version at: https://ctamas.github.io/swapiCharts/
+
 Demo at: https://vimeo.com/310084513
 
 Known Issues: 
