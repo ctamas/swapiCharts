@@ -45,10 +45,6 @@ class App extends Component {
     return this.state.isLightSwitched ? darkTheme : lightTheme;
   }
 
-  getCurrentTheme() {
-    return this.state.isLightSwitched ? darkTheme : lightTheme;
-  }
-
   getCurrentThemeName() {
     return this.state.isLightSwitched ? "dark-theme" : "light-theme";
   }
@@ -170,6 +166,7 @@ class App extends Component {
       );
   };
 
+  // Bring data from API to the format accepted by Highcharts.
   createChartData = (category, subCategory, filter) => {
     let requestData = [];
     for (let element of category) {
