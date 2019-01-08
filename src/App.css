@@ -1,32 +1,77 @@
-.App {
+a.navbar-brand {
+  padding: 0.3rem;
+}
+
+span#title {
+  font-size: 1.8rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+i.far.fa-chart-bar {
+  font-size: 2rem;
+}
+
+#light-switch-container {
+  float: right;
+}
+
+.navbar-brand {
+  width: 100%;
+}
+
+.chart-container {
+  padding: 0.2rem;
+}
+
+.form-group {
+  padding: 1rem;
+}
+
+.dark-theme {
+  background-color: dimgrey;
+}
+
+.remove-chart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.5;
+}
+.remove-chart:hover {
+  opacity: 1;
+}
+
+.add-chart {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 41px);
+  opacity: 0.7;
+}
+
+.add-chart:hover {
+  opacity: 1;
+}
+
+.col {
+  display: block;
+  float: left;
   text-align: center;
+  margin: 0.2rem;
+  height: 405px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.span_1_of_2,
+.span_2_of_2 {
+  width: calc(50% - 20px);
+  padding: 0.2rem;
+  margin: 0.5rem;
+  border-radius: 0rem;
+  box-shadow: 0 0 1.5rem rgba(56, 56, 56, 0.856);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 1000px) {
+  .span_1_of_2,
+  .span_2_of_2 {
+    width: calc(100% - 20px);
   }
 }
