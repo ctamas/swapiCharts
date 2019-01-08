@@ -18,7 +18,7 @@ class Chart extends Component {
     this.props.clearChart(this.props.chartNumber);
   };
 
-  // Render graph is data is present, render placeholder and call dialog if not.
+  // Render graph if data is present, render placeholder and button to open dialog if not.
   render() {
     let modalClose = () => this.setState({ modalShow: false });
     let chartElement;
