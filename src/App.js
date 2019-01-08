@@ -28,8 +28,9 @@ class App extends Component {
       // Wait for light switch status update before updating chart with new theme.
       () => {
         for (let i = 0; i < 4; i++) {
+          // Only re-theme existing charts.
           if (this.state.charts[i].title) {
-            newCharts[i] = this.createGraphBody(i);
+            Object.assign(newCharts[i], this.createGraphBody(i));
           }
         }
 
@@ -152,7 +153,7 @@ class App extends Component {
           charts[chartNumber] = this.createGraphBody(
             chartNumber,
             this.createChartData(result.results, subCategory, filter),
-            this.getChartTitle(category, subCategory),
+            category,
             subCategory
           );
           this.setState({

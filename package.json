@@ -1,9 +1,11 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://ctamas.github.io/swapiCharts/",
   "dependencies": {
     "bootstrap": "^4.2.1",
+    "gh-pages": "^2.0.1",
     "highcharts": "^7.0.0",
     "highcharts-react-official": "^2.0.0",
     "react": "^16.6.3",
@@ -15,6 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+	"deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
