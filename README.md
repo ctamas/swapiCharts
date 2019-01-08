@@ -1,3 +1,16 @@
+Features: 
+- Highcharts JS library integration
+- Responsive resizing of 2 x 2 chart grid
+- Night mode with dark background on chart and page
+- Calls from live API at https://swapi.co/
+
+Find live version at: https://ctamas.github.io/swapiCharts/
+Demo at: https://vimeo.com/310084513
+
+Known Issues: 
+- Chart title missing when cycling night node
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
