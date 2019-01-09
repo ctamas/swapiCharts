@@ -1,15 +1,15 @@
 {
-  "main.css": "/swapiCharts/static/css/main.5b18f843.chunk.css",
-  "main.js": "/swapiCharts/static/js/main.a39ba0bd.chunk.js",
-  "main.js.map": "/swapiCharts/static/js/main.a39ba0bd.chunk.js.map",
+  "main.css": "/swapiCharts/static/css/main.330fd5e4.chunk.css",
+  "main.js": "/swapiCharts/static/js/main.c37e9ec8.chunk.js",
+  "main.js.map": "/swapiCharts/static/js/main.c37e9ec8.chunk.js.map",
   "static/css/1.55e51d29.chunk.css": "/swapiCharts/static/css/1.55e51d29.chunk.css",
   "static/js/1.2db0a2f5.chunk.js": "/swapiCharts/static/js/1.2db0a2f5.chunk.js",
   "static/js/1.2db0a2f5.chunk.js.map": "/swapiCharts/static/js/1.2db0a2f5.chunk.js.map",
   "runtime~main.js": "/swapiCharts/static/js/runtime~main.07adf34f.js",
   "runtime~main.js.map": "/swapiCharts/static/js/runtime~main.07adf34f.js.map",
   "static/css/1.55e51d29.chunk.css.map": "/swapiCharts/static/css/1.55e51d29.chunk.css.map",
-  "static/css/main.5b18f843.chunk.css.map": "/swapiCharts/static/css/main.5b18f843.chunk.css.map",
+  "static/css/main.330fd5e4.chunk.css.map": "/swapiCharts/static/css/main.330fd5e4.chunk.css.map",
   "index.html": "/swapiCharts/index.html",
-  "precache-manifest.668d13b000fd0645594ae74956b396c7.js": "/swapiCharts/precache-manifest.668d13b000fd0645594ae74956b396c7.js",
+  "precache-manifest.2d57b7d06700cee49e6a9f7195a29f5d.js": "/swapiCharts/precache-manifest.2d57b7d06700cee49e6a9f7195a29f5d.js",
   "service-worker.js": "/swapiCharts/service-worker.js"
 }
