@@ -10,8 +10,6 @@ Find live version at: https://ctamas.github.io/swapiCharts/
 
 Demo at: https://vimeo.com/310084513
 
-Known Issues: 
-- Chart title missing when cycling night node
 
 
 -----------------------------------------------
