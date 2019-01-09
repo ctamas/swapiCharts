@@ -15,7 +15,7 @@ class ChartContainer extends Component {
     let charts = this.props.charts.map((chart, index) => (
       <div key={index} className={"col span_" + ((index % 2) + 1) + "_of_2"}>
         <Chart
-          loadChartData={this.props.loadChartData}
+          loadChart={this.props.loadChart}
           clearChart={this.props.clearChart}
           chart={chart}
           chartNumber={index}

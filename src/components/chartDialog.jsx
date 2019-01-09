@@ -36,6 +36,7 @@ class ChartDialog extends Component {
 
   handleCategoryChange = event => {
     let category = event.target.value;
+    console.log("event value", event.target.value);
     let newSubCategories;
     if (category === "starships" || category === "vehicles") {
       newSubCategories = ["crew", "length", "passengers"];
@@ -71,7 +72,7 @@ class ChartDialog extends Component {
       event.preventDefault();
       event.stopPropagation();
       this.setState({ show: false });
-      this.props.loadChartData(
+      this.props.loadChart(
         this.state.selectedCategory,
         this.state.selectedSubCategory,
         this.state.selectedPage,
@@ -128,6 +129,7 @@ class ChartDialog extends Component {
                   <Form.Control
                     onChange={this.handleSubCategoryChange}
                     as="select"
+                    value={this.state.selectedSubCategory}
                   >
                     {subCategories}
                   </Form.Control>

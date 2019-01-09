@@ -38,7 +38,7 @@ class Chart extends Component {
         <ChartDialog
           show={this.state.modalShow}
           onHide={modalClose}
-          loadChartData={this.props.loadChartData}
+          loadChart={this.props.loadChart}
           chartNumber={this.props.chartNumber}
         />
       );

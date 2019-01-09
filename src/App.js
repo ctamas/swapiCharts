@@ -13,13 +13,11 @@ class App extends Component {
       charts: [{}, {}, {}, {}]
     };
     // Charts to be loaded as default
-    this.loadChartData("starships", "crew", "1", 0, 220);
-    this.loadChartData("people", "height", "2", 3, 220);
+    this.loadChart("starships", "crew", "1", 0, 220);
+    this.loadChart("people", "height", "2", 3, 220);
   }
 
   handleLightSwitch = () => {
-    console.log("handled switch", this.state.charts);
-
     let newCharts = [{}, {}, {}, {}];
     this.setState(
       {
@@ -64,7 +62,7 @@ class App extends Component {
           />
           <ChartContainer
             id="chart-container"
-            loadChartData={this.loadChartData.bind(this)}
+            loadChart={this.loadChart.bind(this)}
             clearChart={this.clearChart.bind(this)}
             charts={this.state.charts}
           />
@@ -140,7 +138,7 @@ class App extends Component {
     });
   };
 
-  loadChartData = (category, subCategory, page, chartNumber, filter) => {
+  loadChart = (category, subCategory, page, chartNumber, filter) => {
     let charts = this.state.charts;
     fetch("https://swapi.co/api/" + category + "/?page=" + page)
       .then(res => res.json())
