@@ -12,6 +12,7 @@ class App extends Component {
       isLightSwitched: false,
       charts: [{}, {}, {}, {}]
     };
+    this.chartNames = [];
     // Charts to be loaded as default
     this.loadChart("starships", "crew", "1", 0, 220);
     this.loadChart("people", "height", "2", 3, 220);
@@ -74,10 +75,10 @@ class App extends Component {
   createGraphBody = (chartNumber, data, category, subCategory) => {
     let theme = this.getCurrentTheme();
     let units;
-    // This section deals with keeping old values where relevant while updating theme (WIP).
-    let text = category
+    // This section deals with keeping old chart values where relevant while updating chart theme.
+    this.chartNames[chartNumber] = category
       ? this.getChartTitle(category, subCategory)
-      : this.state.charts[chartNumber].title.text;
+      : this.chartNames[chartNumber];
     if (!this.state.charts[chartNumber].yAxis) {
       units = this.getUnitofMeasurement(subCategory);
     } else {
@@ -86,7 +87,7 @@ class App extends Component {
 
     let chartTemplate = {
       title: {
-        text: text,
+        text: this.chartNames[chartNumber],
         style: {
           color: theme.textColor
         }
