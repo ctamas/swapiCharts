@@ -29,7 +29,7 @@ class App extends Component {
         for (let i = 0; i < 4; i++) {
           // Only re-theme existing charts.
           if (this.state.charts[i].title) {
-            Object.assign(newCharts[i], this.createGraphBody(i));
+            Object.assign(newCharts[i], this.createChartBody(i));
           }
         }
 
@@ -72,7 +72,7 @@ class App extends Component {
     );
   }
 
-  createGraphBody = (chartNumber, data, category, subCategory) => {
+  createChartBody = (chartNumber, data, category, subCategory) => {
     let theme = this.getCurrentTheme();
     let units;
     // This section deals with keeping old chart values where relevant while updating chart theme.
@@ -141,11 +141,15 @@ class App extends Component {
 
   loadChart = (category, subCategory, page, chartNumber, filter) => {
     let charts = this.state.charts;
+    // Let chart component know loading is in progress.
+    charts[chartNumber] = { title: { text: "loading" } };
+    // Load chart.
+    this.setState({ charts: charts });
     fetch("https://swapi.co/api/" + category + "/?page=" + page)
       .then(res => res.json())
       .then(
         result => {
-          charts[chartNumber] = this.createGraphBody(
+          charts[chartNumber] = this.createChartBody(
             chartNumber,
             this.createChartData(result.results, subCategory, filter),
             category,

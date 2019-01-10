@@ -18,7 +18,7 @@ class Chart extends Component {
     this.props.clearChart(this.props.chartNumber);
   };
 
-  // Render graph if data is present, render placeholder and button to open dialog if not.
+  // Render chart if data is present, button to open dialog if not.
   render() {
     let modalClose = () => this.setState({ modalShow: false });
     let chartElement;
@@ -38,6 +38,7 @@ class Chart extends Component {
         <ChartDialog
           show={this.state.modalShow}
           onHide={modalClose}
+          chart={this.props.chart}
           loadChart={this.props.loadChart}
           chartNumber={this.props.chartNumber}
         />

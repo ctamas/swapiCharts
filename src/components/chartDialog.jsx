@@ -36,7 +36,6 @@ class ChartDialog extends Component {
 
   handleCategoryChange = event => {
     let category = event.target.value;
-    console.log("event value", event.target.value);
     let newSubCategories;
     if (category === "starships" || category === "vehicles") {
       newSubCategories = ["crew", "length", "passengers"];
@@ -83,6 +82,18 @@ class ChartDialog extends Component {
   }
 
   render() {
+    let addButtonText;
+    // Indicate loading on add button if chart is loading.
+    if (this.props.chart.title && this.props.chart.title.text == "loading") {
+      addButtonText = (
+        <span>
+          <i class="fas fa-sync-alt loading-spinner" /> Loading
+        </span>
+      );
+    } else {
+      addButtonText = <span>Add chart</span>;
+    }
+    // Generate list items.
     const { validated } = this.state;
     let categories = this.categories.map((category, index) => (
       <option key={index} index={index} value={category}>
@@ -101,9 +112,8 @@ class ChartDialog extends Component {
           onClick={this.handleShow}
           className="add-chart"
         >
-          Add chart
+          {addButtonText}
         </Button>
-
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Add chart</Modal.Title>
