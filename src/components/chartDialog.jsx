@@ -93,6 +93,12 @@ class ChartDialog extends Component {
         {category}
       </option>
     ));
+    // Genrate preview URL
+    let resultURL =
+      "https://swapi.co/api/" +
+      this.state.selectedCategory +
+      "/?page=" +
+      this.state.selectedPage;
     return (
       <div>
         <Button
@@ -176,17 +182,9 @@ class ChartDialog extends Component {
                     className="form-control"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={
-                      "https://swapi.co/api/" +
-                      this.state.selectedCategory +
-                      "/?page=" +
-                      this.state.selectedPage
-                    }
+                    href={resultURL}
                   >
-                    {"https://swapi.co/api/" +
-                      this.state.selectedCategory +
-                      "/?page=" +
-                      this.state.selectedPage}
+                    {resultURL}
                   </a>
                 </Form.Group>
               </Form.Row>
