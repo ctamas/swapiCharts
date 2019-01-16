@@ -205,9 +205,6 @@ class App extends Component {
       subCategory.slice(1) +
       " of " +
       category;
-    if (this.state.charts[0].title) {
-      console.log("Old title", this.state.charts[0].title.text);
-    }
     return title;
   };
 }

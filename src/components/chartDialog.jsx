@@ -7,9 +7,6 @@ class ChartDialog extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-
     this.categories = ["starships", "vehicles", "people"];
     this.state = {
       show: this.props.show,
@@ -22,17 +19,17 @@ class ChartDialog extends Component {
     };
   }
 
-  handleClose() {
+  handleClose = () => {
     this.setState({
       show: false
     });
-  }
+  };
 
-  handleShow() {
+  handleShow = () => {
     this.setState({
       show: true
     });
-  }
+  };
 
   handleCategoryChange = event => {
     let category = event.target.value;
@@ -49,27 +46,18 @@ class ChartDialog extends Component {
     });
   };
 
-  handleSubCategoryChange = event => {
-    this.setState({ selectedSubCategory: event.target.value });
+  // Handle changes outside from category change
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
-  handlePageChange = event => {
-    this.setState({ selectedPage: event.target.value });
-  };
-
-  handleFilterChange = event => {
-    this.setState({ selectedFilter: event.target.value });
-  };
-
-  handleSubmit(event) {
+  handleSubmit = event => {
     const form = event.currentTarget;
+    event.preventDefault();
+    event.stopPropagation();
     if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
       this.setState({ validated: true });
     } else {
-      event.preventDefault();
-      event.stopPropagation();
       this.setState({ show: false });
       this.props.loadChart(
         this.state.selectedCategory,
@@ -79,15 +67,15 @@ class ChartDialog extends Component {
         this.state.selectedFilter
       );
     }
-  }
+  };
 
   render() {
     let addButtonText;
     // Indicate loading on add button if chart is loading.
-    if (this.props.chart.title && this.props.chart.title.text == "loading") {
+    if (this.props.chart.title && this.props.chart.title.text === "loading") {
       addButtonText = (
         <span>
-          <i class="fas fa-sync-alt loading-spinner" /> Loading
+          <i className="fas fa-sync-alt loading-spinner" /> Loading
         </span>
       );
     } else {
@@ -125,7 +113,7 @@ class ChartDialog extends Component {
               onSubmit={e => this.handleSubmit(e)}
             >
               <Form.Row>
-                <Form.Group>
+                <Form.Group className="dialog-select-group">
                   <Form.Label>Category</Form.Label>
                   <Form.Control
                     onChange={this.handleCategoryChange}
@@ -134,10 +122,11 @@ class ChartDialog extends Component {
                     {categories}
                   </Form.Control>
                 </Form.Group>
-                <Form.Group>
+                <Form.Group className="dialog-select-group">
                   <Form.Label>Property</Form.Label>
                   <Form.Control
-                    onChange={this.handleSubCategoryChange}
+                    name="selectedSubCategory"
+                    onChange={this.handleChange}
                     as="select"
                     value={this.state.selectedSubCategory}
                   >
@@ -146,7 +135,11 @@ class ChartDialog extends Component {
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Page</Form.Label>
-                  <Form.Control onChange={this.handlePageChange} as="select">
+                  <Form.Control
+                    name="selectedPage"
+                    onChange={this.handleChange}
+                    as="select"
+                  >
                     <option key="1" value="1">
                       1
                     </option>
@@ -163,13 +156,38 @@ class ChartDialog extends Component {
                 <Form.Group>
                   <Form.Label>Filter maximum value</Form.Label>
                   <Form.Control
+                    name="selectedFilter"
                     type="number"
                     min="10"
                     step="5"
                     value={this.state.selectedFilter}
-                    onChange={this.handleFilterChange}
+                    onChange={this.handleChange}
                     required
                   />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group>
+                  <Form.Label>
+                    Request URL <i className="fas fa-link" />
+                  </Form.Label>
+                  <br />
+                  <a
+                    className="form-control"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://swapi.co/api/" +
+                      this.state.selectedCategory +
+                      "/?page=" +
+                      this.state.selectedPage
+                    }
+                  >
+                    {"https://swapi.co/api/" +
+                      this.state.selectedCategory +
+                      "/?page=" +
+                      this.state.selectedPage}
+                  </a>
                 </Form.Group>
               </Form.Row>
               <Modal.Footer>
