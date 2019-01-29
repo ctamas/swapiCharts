@@ -29,15 +29,22 @@ i.far.fa-chart-bar {
   background-color: dimgrey;
 }
 
-.remove-chart {
+.chart-button-container {
   position: absolute;
   top: 10px;
   right: 10px;
-  opacity: 0.6;
 }
 
-.remove-chart:hover {
+.chart-button {
+  opacity: 0.62;
+}
+
+.chart-button:hover {
   opacity: 1;
+}
+
+.chart-button-disabled {
+  opacity: 0.3;
 }
 
 .add-chart {

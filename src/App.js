@@ -10,12 +10,22 @@ class App extends Component {
       error: null,
       isLoaded: false,
       isLightSwitched: false,
-      charts: [{}, {}, {}, {}]
+      charts: [{}, {}, {}, {}],
+      chartInfo: [
+        ["starships", "crew", "1", 0, 220],
+        [],
+        [],
+        ["people", "height", "2", 3, 220]
+      ]
     };
     this.chartNames = [];
-    // Charts to be loaded as default
-    this.loadChart("starships", "crew", "1", 0, 220);
-    this.loadChart("people", "height", "2", 3, 220);
+
+    // Load default charts from chart info
+    for (let i = 0; i < 4; i++) {
+      if (this.state.chartInfo[i].length) {
+        this.loadChart(...this.state.chartInfo[i]);
+      }
+    }
   }
 
   handleLightSwitch = () => {
@@ -65,7 +75,9 @@ class App extends Component {
             id="chart-container"
             loadChart={this.loadChart.bind(this)}
             clearChart={this.clearChart.bind(this)}
+            changeChartPage={this.changeChartPage.bind(this)}
             charts={this.state.charts}
+            chartInfo={this.state.chartInfo}
           />
         </div>
       </React.Fragment>
@@ -131,20 +143,14 @@ class App extends Component {
     return chartTemplate;
   };
 
-  clearChart = chartNumber => {
-    let newCharts = this.state.charts;
-    newCharts[chartNumber] = {};
-    this.setState({
-      charts: newCharts
-    });
-  };
-
   loadChart = (category, subCategory, page, chartNumber, filter) => {
     let charts = this.state.charts;
+    let chartInfo = this.state.chartInfo;
+    chartInfo[chartNumber] = [category, subCategory, page, chartNumber, filter];
     // Let chart component know loading is in progress.
     charts[chartNumber] = { title: { text: "loading" } };
     // Load chart.
-    this.setState({ charts: charts });
+    this.setState({ charts: charts, chartInfo: chartInfo });
     fetch("https://swapi.co/api/" + category + "/?page=" + page)
       .then(res => res.json())
       .then(
@@ -206,6 +212,22 @@ class App extends Component {
       " of " +
       category;
     return title;
+  };
+
+  clearChart = chartNumber => {
+    let newCharts = this.state.charts;
+    newCharts[chartNumber] = {};
+    this.setState({
+      charts: newCharts
+    });
+  };
+
+  changeChartPage = (chartNumber, page) => {
+    let newChartInfo = this.state.chartInfo;
+    newChartInfo[chartNumber][2] =
+      parseInt(newChartInfo[chartNumber][2]) + page;
+    // Update chartinfo with new page position
+    this.loadChart(...newChartInfo[chartNumber]);
   };
 }
 
