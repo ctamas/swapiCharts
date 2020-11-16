@@ -4,7 +4,7 @@ Features:
 - Highcharts JS library integration
 - Responsive resizing of 2 x 2 chart grid
 - Night mode with dark background on chart and page
-- Calls from live API at https://swapi.co/
+- Calls from live API at https://swapi.dev
 
 Find live version at: https://ctamas.github.io/swapiCharts/
 
