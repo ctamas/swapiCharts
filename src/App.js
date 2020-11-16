@@ -151,7 +151,7 @@ class App extends Component {
     charts[chartNumber] = { title: { text: "loading" } };
     // Load chart.
     this.setState({ charts: charts, chartInfo: chartInfo });
-    fetch("https://swapi.co/api/" + category + "/?page=" + page)
+    fetch("https://swapi.dev/api/" + category + "/?page=" + page)
       .then(res => res.json())
       .then(
         result => {
