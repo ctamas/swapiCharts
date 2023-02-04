@@ -13,12 +13,13 @@ class ChartContainer extends Component {
           chart={chart}
           chartInfo={this.props.chartInfo[index]}
           chartNumber={index}
+          theme={this.props.theme}
         />
       </div>
     ));
 
     return (
-      <div className="chart-container">
+      <div className="charts-container">
         <React.Fragment>{charts}</React.Fragment>
       </div>
     );

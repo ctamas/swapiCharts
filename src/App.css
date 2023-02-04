@@ -1,4 +1,4 @@
-/* General formatting */
+/* Navbar */
 a.navbar-brand {
   padding: 0.3rem;
 }
@@ -9,24 +9,45 @@ a.navbar-brand {
 }
 
 span#title {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
 
 i.far.fa-chart-bar {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
-.chart-container {
-  padding: 0.2rem;
+@media (min-width: 480px) {
+  span#title, i.far.fa-chart-bar {
+    font-size: 1.8rem;
+  }  
 }
 
 #light-switch-container {
   float: right;
 }
 
+.light-switch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* General */
+.charts-container {
+  padding: 0.2rem;
+}
+
+.chart-dialog-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dark-theme {
   background-color: dimgrey;
+  color: white;
 }
 
 .chart-button-container {
@@ -48,9 +69,6 @@ i.far.fa-chart-bar {
 }
 
 .add-chart {
-  position: absolute;
-  top: calc(50% - 15px);
-  left: calc(50% - 41px);
   opacity: 0.75;
 }
 
@@ -83,6 +101,7 @@ i.far.fa-chart-bar {
 
 .span_1_of_2,
 .span_2_of_2 {
+  position: relative;
   width: calc(50% - 20px);
   padding: 0.2rem;
   margin: 0.5rem;

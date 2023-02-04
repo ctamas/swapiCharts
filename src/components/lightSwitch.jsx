@@ -16,6 +16,7 @@ class LightSwitch extends React.Component {
             <i className={this.getSwitchIcon()} />
             <input
               name="lightSwitch"
+              className="light-switch-checkbox"
               type="checkbox"
               checked={this.props.lightSwitched}
               onChange={this.props.onLightSwitch}

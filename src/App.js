@@ -12,14 +12,16 @@ class App extends Component {
       isLightSwitched: false,
       charts: [{}, {}, {}, {}],
       chartInfo: [
-        ["starships", "crew", "1", 0, 220],
+        ["starships", "crew", "1", 0, 10],
         [],
         [],
-        ["people", "height", "2", 3, 220]
+        ["people", "height", "1", 3, 220]
       ]
     };
     this.chartNames = [];
+  }
 
+  componentWillMount() {
     // Load default charts from chart info
     for (let i = 0; i < 4; i++) {
       if (this.state.chartInfo[i].length) {
@@ -78,6 +80,7 @@ class App extends Component {
             changeChartPage={this.changeChartPage.bind(this)}
             charts={this.state.charts}
             chartInfo={this.state.chartInfo}
+            theme={this.getCurrentThemeName.bind(this)}
           />
         </div>
       </React.Fragment>

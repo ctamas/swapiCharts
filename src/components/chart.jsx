@@ -66,6 +66,7 @@ class Chart extends Component {
           chartInfo={this.props.chartInfo}
           loadChart={this.props.loadChart}
           chartNumber={this.props.chartNumber}
+          theme={this.props.theme}
         />
       );
     }

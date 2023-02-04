@@ -100,7 +100,7 @@ class ChartDialog extends Component {
       "/?page=" +
       this.state.selectedPage;
     return (
-      <div>
+      <div className="chart-dialog-container">
         <Button
           variant="secondary"
           onClick={this.handleShow}
@@ -109,10 +109,10 @@ class ChartDialog extends Component {
           {addButtonText}
         </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header className={this.props.theme()} closeButton>
             <Modal.Title>Add chart</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className={this.props.theme()}>
             <Form
               noValidate
               validated={validated}
@@ -164,8 +164,6 @@ class ChartDialog extends Component {
                   <Form.Control
                     name="selectedFilter"
                     type="number"
-                    min="10"
-                    step="5"
                     value={this.state.selectedFilter}
                     onChange={this.handleChange}
                     required
