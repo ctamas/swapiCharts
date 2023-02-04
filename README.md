@@ -1,3 +1,5 @@
+Find live version at: https://ctamas.github.io/swapiCharts/
+
 Highcharts implementation of Star Wars Public API using React
 
 Features: 
@@ -5,8 +7,6 @@ Features:
 - Responsive resizing of 2 x 2 chart grid
 - Night mode with dark background on chart and page
 - Calls from live API at https://swapi.dev
-
-Find live version at: https://ctamas.github.io/swapiCharts/
 
 Demo at: https://vimeo.com/310084513
 
