@@ -1,6 +1,6 @@
 import React from "react";
-import Popover from "react-bootstrap/lib/Popover";
-import OverlayTrigger from "react-bootstrap/lib/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 class LightSwitch extends React.Component {
   // The light switch is the trigger for dark/light mode.

@@ -57,6 +57,8 @@ i.far.fa-chart-bar {
 }
 
 .chart-button {
+  width: 30px;
+  margin-left: 8px;
   opacity: 0.62;
 }
 
@@ -65,6 +67,8 @@ i.far.fa-chart-bar {
 }
 
 .chart-button-disabled {
+  width: 30px;
+  margin-left: 8px;
   opacity: 0.3;
 }
 
@@ -80,6 +84,11 @@ i.far.fa-chart-bar {
 
 .dialog-select-group {
   width: 160px;
+}
+
+.modal-content button.close {
+  width: 30px;
+  padding: 0px 0px 2px;
 }
 
 .form-group {
@@ -124,4 +133,8 @@ i.far.fa-chart-bar {
   to {
     transform: rotate(360deg);
   }
+}
+
+#popover-trigger-hover-focus {
+  padding: 6px;
 }

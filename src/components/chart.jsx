@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import ChartDialog from "./chartDialog";
-import Popover from "react-bootstrap/lib/Popover";
-import OverlayTrigger from "react-bootstrap/lib/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 class Chart extends Component {
   handleRemovePage = () => {
@@ -26,9 +26,9 @@ class Chart extends Component {
   render() {
     let chartElement;
     let nextButton =
-      this.props.chartInfo[2] == "3" ? "chart-button-disabled" : "chart-button";
+      this.props.chartInfo[2] === "3" ? "chart-button-disabled" : "chart-button";
     let previousButton =
-      this.props.chartInfo[2] == "1" ? "chart-button-disabled" : "chart-button";
+      this.props.chartInfo[2] === "1" ? "chart-button-disabled" : "chart-button";
 
     if (this.props.chart.series) {
       chartElement = (
